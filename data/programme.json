@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "_notes": "Source of truth for the programme. Place at data/programme.json. Reps use {min,max}; perSide = per leg/arm; timed moves use durationSec. videoUrl/videoStartSec/videoEndSec are filled in later. shortName (optional) is used in tight lists; the full name is used elsewhere.",
+  "_notes": "Source of truth for the programme. Place at data/programme.json. Reps use {min,max}; each session has its own warmup list; perSide = per leg/arm; timed moves use durationSec. videoUrl/videoStartSec/videoEndSec are filled in later. shortName (optional) is used in tight lists; the full name is used elsewhere.",
 
   "restDefaults": {
     "sets": {
@@ -205,6 +205,8 @@
     "fire-hydrant": { "name": "Fire hydrant", "type": "warmup", "musclesPrimary": ["Side glutes"], "why": "Keeps hips and knees stable.", "cues": ["On hands and knees", "Lift bent knee out to the side", "Keep hips level"], "videoUrl": null },
     "wall-slide": { "name": "Wall slide", "type": "warmup", "cues": ["Back and arms against the wall", "Slide arms up and down slowly"], "videoUrl": null },
     "leg-swing": { "name": "Leg swings", "type": "warmup", "cues": ["Hold a wall", "Swing forward and back, relaxed"], "videoUrl": null },
+    "hip-hinge": { "name": "Hip hinge", "type": "warmup", "musclesPrimary": ["Hamstrings", "Glutes"], "why": "Practises the bending pattern used in the RDL.", "cues": ["Hands on hips, soft knees", "Push your hips back like closing a door with your bottom", "Stand tall and squeeze your glutes"], "videoUrl": null },
+    "wall-push-up": { "name": "Wall push-up", "type": "warmup", "musclesPrimary": ["Chest", "Triceps"], "why": "Warms up the chest and shoulders for pressing.", "cues": ["Hands on the wall at shoulder height", "Lower your chest to the wall, elbows at about 45°", "Push back to start"], "videoUrl": null },
 
     "chin-tuck": { "name": "Chin tuck", "type": "mobility", "cues": ["Sit or stand tall", "Glide chin straight back (double chin)", "Hold 3 seconds"], "videoUrl": null },
     "upper-trap-stretch": { "name": "Upper trap stretch", "type": "mobility", "cues": ["Ear toward shoulder", "Keep the opposite shoulder down", "Gentle, never sharp"], "videoUrl": null },
@@ -219,24 +221,6 @@
     { "from": "reverse-lunge", "to": "step-up", "afterWeeks": 8, "note": "Needs a sturdy 15–25 cm step" },
     { "from": "plank", "to": "pallof-press", "afterWeeks": 12, "note": "Needs a resistance band or cable" }
   ],
-
-  "warmups": {
-    "base": {
-      "title": "5-minute warm-up",
-      "items": [
-        { "exercise": "march-on-spot", "durationSec": { "min": 60, "max": 60 } },
-        { "exercise": "arm-circles", "reps": { "min": 10, "max": 10 }, "perSide": true, "note": "10 each direction" },
-        { "exercise": "hip-circles", "reps": { "min": 10, "max": 10 }, "note": "10 each direction" },
-        { "exercise": "chair-squat-bw", "reps": { "min": 10, "max": 10 } },
-        { "exercise": "glute-bridge", "reps": { "min": 10, "max": 10 } },
-        { "exercise": "calf-raise", "reps": { "min": 10, "max": 10 } },
-        { "exercise": "fire-hydrant", "reps": { "min": 8, "max": 8 }, "perSide": true }
-      ],
-      "finalNote": "Do the first set or round slightly lighter and slower."
-    },
-    "upperAddOn": [ { "exercise": "wall-slide", "reps": { "min": 10, "max": 10 } } ],
-    "lowerAddOn": [ { "exercise": "leg-swing", "reps": { "min": 10, "max": 10 }, "perSide": true } ]
-  },
 
   "routines": {
     "neck": {
@@ -259,7 +243,19 @@
       "title": "Full Body A",
       "format": "sets",
       "estMinutes": 35,
-      "warmup": { "base": true, "addOn": "lowerAddOn" },
+      "warmup": {
+        "estMinutes": 5,
+        "items": [
+          { "exercise": "march-on-spot", "durationSec": { "min": 60, "max": 60 } },
+          { "exercise": "hip-circles", "reps": { "min": 10, "max": 10 }, "note": "10 each direction" },
+          { "exercise": "chair-squat-bw", "reps": { "min": 10, "max": 10 } },
+          { "exercise": "hip-hinge", "reps": { "min": 10, "max": 10 } },
+          { "exercise": "glute-bridge", "reps": { "min": 10, "max": 10 } },
+          { "exercise": "arm-circles", "reps": { "min": 10, "max": 10 }, "note": "10 each direction" },
+          { "exercise": "wall-push-up", "reps": { "min": 10, "max": 10 } }
+        ],
+        "finalNote": "Do the first set or round slightly lighter and slower."
+      },
       "exercises": [
         { "exercise": "goblet-squat", "sets": 3, "reps": { "min": 8, "max": 10 }, "restSec": 90 },
         { "exercise": "dumbbell-rdl", "sets": 3, "reps": { "min": 8, "max": 10 }, "restSec": 90 },
@@ -273,7 +269,18 @@
       "title": "Full Body B",
       "format": "circuit",
       "estMinutes": 30,
-      "warmup": { "base": true, "addOn": "upperAddOn" },
+      "warmup": {
+        "estMinutes": 5,
+        "items": [
+          { "exercise": "march-on-spot", "durationSec": { "min": 60, "max": 60 } },
+          { "exercise": "leg-swing", "reps": { "min": 10, "max": 10 }, "note": "10 each leg" },
+          { "exercise": "chair-squat-bw", "reps": { "min": 10, "max": 10 } },
+          { "exercise": "reverse-lunge", "reps": { "min": 5, "max": 5 }, "note": "5 each leg, holding a wall, no weights" },
+          { "exercise": "arm-circles", "reps": { "min": 10, "max": 10 }, "note": "10 each direction" },
+          { "exercise": "wall-slide", "reps": { "min": 10, "max": 10 } }
+        ],
+        "finalNote": "Do the first set or round slightly lighter and slower."
+      },
       "circuits": [
         {
           "rounds": { "min": 2, "max": 3 },
@@ -302,7 +309,16 @@
       "format": "circuit",
       "estMinutes": 15,
       "optional": true,
-      "warmup": { "base": true, "addOn": "upperAddOn" },
+      "warmup": {
+        "estMinutes": 3,
+        "items": [
+          { "exercise": "march-on-spot", "durationSec": { "min": 60, "max": 60 } },
+          { "exercise": "arm-circles", "reps": { "min": 10, "max": 10 }, "note": "10 each direction" },
+          { "exercise": "wall-slide", "reps": { "min": 10, "max": 10 } },
+          { "exercise": "wall-push-up", "reps": { "min": 10, "max": 10 } }
+        ],
+        "finalNote": "Do the first set or round slightly lighter and slower."
+      },
       "circuits": [
         {
           "rounds": { "min": 2, "max": 2 },
@@ -320,7 +336,18 @@
       "title": "Upper Body",
       "format": "circuit",
       "estMinutes": 25,
-      "warmup": { "base": true, "addOn": "upperAddOn" },
+      "warmup": {
+        "estMinutes": 5,
+        "items": [
+          { "exercise": "march-on-spot", "durationSec": { "min": 60, "max": 60 } },
+          { "exercise": "shoulder-rolls", "reps": { "min": 10, "max": 10 } },
+          { "exercise": "chin-tuck", "reps": { "min": 5, "max": 5 }, "note": "5, slow and gentle" },
+          { "exercise": "wall-slide", "reps": { "min": 10, "max": 10 } },
+          { "exercise": "band-pull-apart", "reps": { "min": 10, "max": 10 }, "note": "10 with a light band" },
+          { "exercise": "wall-push-up", "reps": { "min": 10, "max": 10 } }
+        ],
+        "finalNote": "Do the first set or round slightly lighter and slower."
+      },
       "circuits": [
         {
           "rounds": { "min": 3, "max": 3 },
@@ -347,7 +374,19 @@
       "title": "Lower Body",
       "format": "sets",
       "estMinutes": 35,
-      "warmup": { "base": true, "addOn": "lowerAddOn" },
+      "warmup": {
+        "estMinutes": 5,
+        "items": [
+          { "exercise": "march-on-spot", "durationSec": { "min": 60, "max": 60 } },
+          { "exercise": "hip-circles", "reps": { "min": 10, "max": 10 }, "note": "10 each direction" },
+          { "exercise": "leg-swing", "reps": { "min": 10, "max": 10 }, "note": "10 each leg" },
+          { "exercise": "chair-squat-bw", "reps": { "min": 10, "max": 10 } },
+          { "exercise": "hip-hinge", "reps": { "min": 10, "max": 10 } },
+          { "exercise": "glute-bridge", "reps": { "min": 10, "max": 10 } },
+          { "exercise": "calf-raise", "reps": { "min": 10, "max": 10 } }
+        ],
+        "finalNote": "Do the first set or round slightly lighter and slower."
+      },
       "exercises": [
         { "exercise": "goblet-squat", "sets": 3, "reps": { "min": 8, "max": 10 }, "restSec": 90 },
         { "exercise": "dumbbell-rdl", "sets": 3, "reps": { "min": 8, "max": 10 }, "restSec": 90 },
@@ -360,7 +399,14 @@
       "title": "Core circuit",
       "format": "circuit",
       "estMinutes": 12,
-      "warmup": { "base": false, "note": "Short version: march 60 s, glute bridges 10, arm circles 10" },
+      "warmup": {
+        "estMinutes": 3,
+        "items": [
+          { "exercise": "march-on-spot", "durationSec": { "min": 60, "max": 60 } },
+          { "exercise": "glute-bridge", "reps": { "min": 10, "max": 10 } },
+          { "exercise": "arm-circles", "reps": { "min": 10, "max": 10 }, "note": "10 each direction" }
+        ]
+      },
       "circuits": [
         {
           "rounds": { "min": 3, "max": 3 },

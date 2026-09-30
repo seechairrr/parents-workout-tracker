@@ -46,7 +46,7 @@ export function describeRounds(rounds: Range): string {
 }
 
 export function describeWarmup(session: Session): string {
-  return session.warmup.base ? '5-min warm-up first' : 'Short warm-up first'
+  return `${session.warmup.estMinutes}-min warm-up first`
 }
 
 export function sessionTitle(id: string): string {

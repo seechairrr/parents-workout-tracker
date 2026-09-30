@@ -12,8 +12,6 @@ export function WarmupStep({ plan, onDone }: { plan: WarmupPlan; onDone: () => v
       <h1 className={stepStyles.name}>{plan.title}</h1>
       <p className={styles.intro}>Get the blood flowing. Go at an easy pace.</p>
 
-      {plan.note && <p className={styles.note}>{plan.note}</p>}
-
       {plan.items.length > 0 && (
         <ol className={styles.list}>
           {plan.items.map((item, i) => (

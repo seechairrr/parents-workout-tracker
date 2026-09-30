@@ -46,7 +46,7 @@ interface SessionBase {
   title: string
   estMinutes: number
   optional?: boolean
-  warmup: { base: boolean; addOn?: 'upperAddOn' | 'lowerAddOn'; note?: string }
+  warmup: SessionWarmup
   after?: string[]
 }
 
@@ -101,10 +101,11 @@ export interface WarmupItem {
   note?: string
 }
 
-export interface Warmups {
-  base: { title: string; items: WarmupItem[]; finalNote?: string }
-  upperAddOn: WarmupItem[]
-  lowerAddOn: WarmupItem[]
+/** Each session's own warm-up, matched to that day's exercises. */
+export interface SessionWarmup {
+  estMinutes: number
+  items: WarmupItem[]
+  finalNote?: string
 }
 
 export interface RestDefaults {
@@ -116,7 +117,6 @@ export interface Programme {
   version: number
   restDefaults: RestDefaults
   progression: { rule: string; availableWeightsKg: number[] }
-  warmups: Warmups
   exercises: Record<string, Exercise>
   routines: Record<string, Routine>
   sessions: Record<string, Session>
