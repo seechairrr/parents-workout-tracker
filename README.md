@@ -1,6 +1,6 @@
 # Parents' Workout Tracker
 
-A phone app (installable web app) that guides Mum and Dad through their weekly strength programme.
+A phone app (installable web app) that guides Mom and Dad through their weekly strength programme.
 See `CLAUDE.md` for the brief. All programme content lives in `data/programme.json`.
 
 ## Run it on your computer

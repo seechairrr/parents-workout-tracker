@@ -1,7 +1,7 @@
 {
   "name": "Workouts",
   "short_name": "Workouts",
-  "description": "Mum and Dad's weekly strength programme.",
+  "description": "Mom and Dad's weekly strength programme.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

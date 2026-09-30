@@ -7,6 +7,7 @@
 // - every set logged in the workout player
 // - sessions finished (or ended early) per day
 // - the workout currently in progress, so it can be continued after closing the app
+// - which exercise demos each person has seen
 
 import type { UserId } from '../programme/programme'
 
@@ -48,9 +49,23 @@ interface Log {
   /** sessions[userId][isoDate][sessionId] = 'finished' | 'ended' */
   sessions: Record<string, Record<string, Record<string, SessionResult>>>
   active: Record<string, ActiveWorkout | undefined>
+  /**
+   * seen[userId][exerciseId]: 'video' once they've watched the demo video,
+   * 'cues' if they only saw the written tips (no video existed yet).
+   */
+  seen: Record<string, Record<string, SeenLevel>>
 }
 
-const empty = (): Log => ({ activities: {}, routines: {}, sets: [], sessions: {}, active: {} })
+export type SeenLevel = 'cues' | 'video'
+
+const empty = (): Log => ({
+  activities: {},
+  routines: {},
+  sets: [],
+  sessions: {},
+  active: {},
+  seen: {},
+})
 
 // Keep a parsed copy in memory so we don't re-read the phone's storage on every screen update.
 let cache: Log | null = null
@@ -151,6 +166,19 @@ export function getActiveWorkout(user: UserId): ActiveWorkout | undefined {
 export function saveActiveWorkout(user: UserId, workout: ActiveWorkout | undefined): void {
   const log = read()
   log.active[user] = workout
+  write(log)
+}
+
+// Demos --------------------------------------------------------------------------
+
+export function seenLevel(user: UserId, exerciseId: string): SeenLevel | undefined {
+  return read().seen[user]?.[exerciseId]
+}
+
+export function markSeen(user: UserId, exerciseId: string, level: SeenLevel): void {
+  const log = read()
+  const mine = (log.seen[user] ??= {})
+  if (mine[exerciseId] !== 'video') mine[exerciseId] = level
   write(log)
 }
 

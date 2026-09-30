@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { UserId } from './programme/programme'
 import { BottomNav, type Tab } from './components/BottomNav'
-import { ComingSoon } from './components/ComingSoon'
+import { ExerciseLibrary } from './components/library/ExerciseLibrary'
 import { ProfilePicker } from './components/ProfilePicker'
 import { TodayScreen } from './components/TodayScreen'
 import { WorkoutPlayer } from './components/player/WorkoutPlayer'
@@ -38,11 +38,7 @@ export function App() {
           onStartSession={(sessionId) => setScreen({ name: 'player', user: screen.user, sessionId })}
         />
       ) : (
-        <ComingSoon
-          title="Exercises"
-          message="The exercise library, with videos and form tips, is coming soon."
-          onBack={toToday}
-        />
+        <ExerciseLibrary />
       )}
       <BottomNav
         user={screen.user}

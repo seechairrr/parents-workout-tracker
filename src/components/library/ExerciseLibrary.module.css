@@ -1,0 +1,59 @@
+.screen {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: calc(56px + env(safe-area-inset-top)) var(--gutter) calc(130px + env(safe-area-inset-bottom));
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.intro {
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+.heading {
+  margin: 28px 0 10px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 80px;
+  padding: 14px 16px 14px 20px;
+  border-radius: var(--radius-row);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  text-align: left;
+}
+
+.row:active {
+  background: #f7f7fa;
+}
+
+.text {
+  flex: 1;
+  display: grid;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.muscles {
+  color: var(--text-muted);
+}

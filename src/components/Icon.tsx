@@ -3,6 +3,9 @@
 
 const paths = {
   chevronRight: <path d="M9 5l7 7-7 7" />,
+  star: <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" />,
+  chevronLeft: <path d="M15 5l-7 7 7 7" />,
+  heart: <path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0112 7.3 4.3 4.3 0 0119.5 10c0 5.4-7.5 10-7.5 10z" />,
   close: <path d="M6 6l12 12M18 6L6 18" />,
   minus: <path d="M5 12h14" />,
   plus: <path d="M12 5v14M5 12h14" />,

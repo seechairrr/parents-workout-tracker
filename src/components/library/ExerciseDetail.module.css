@@ -1,0 +1,109 @@
+.screen {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: calc(20px + env(safe-area-inset-top)) var(--gutter) calc(130px + env(safe-area-inset-bottom));
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 52px;
+  padding: 0 20px 0 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  font-weight: 700;
+}
+
+.category {
+  margin-top: 24px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.fullName {
+  margin-top: 4px;
+  color: var(--text-muted);
+}
+
+.video {
+  margin-top: 20px;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.chipLabel {
+  margin: 12px 0 8px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chipMain,
+.chipAlso {
+  padding: 6px 16px;
+  border: 2px solid var(--primary);
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.chipMain {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.chipAlso {
+  border-color: var(--border);
+}
+
+.why {
+  display: flex;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 18px 20px;
+  border-radius: var(--radius-card);
+  background: var(--primary-tint);
+}
+
+.why svg {
+  flex: none;
+  color: var(--primary);
+}
+
+.whyTitle {
+  color: var(--primary);
+  font-size: 18px;
+}
+
+.heading {
+  margin: 28px 0 10px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+}

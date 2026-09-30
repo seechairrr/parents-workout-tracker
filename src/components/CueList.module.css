@@ -1,0 +1,27 @@
+.cues {
+  display: grid;
+  gap: 10px;
+}
+
+.cue {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 72px;
+  padding: 12px 18px;
+  border-radius: var(--radius-row);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  font-weight: 700;
+}
+
+.number {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-tint);
+  color: var(--primary);
+}

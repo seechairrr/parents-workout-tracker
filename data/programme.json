@@ -388,7 +388,7 @@
 
   "users": {
     "mum": {
-      "displayName": "Mum",
+      "displayName": "Mom",
       "dailyRoutines": [],
       "schedule": {
         "mon": [ { "type": "session", "id": "mum-full-a" } ],
@@ -407,7 +407,7 @@
         "mon": [ { "type": "session", "id": "dad-upper" } ],
         "tue": [ { "type": "activity", "id": "rest" } ],
         "wed": [ { "type": "session", "id": "dad-lower" } ],
-        "thu": [ { "type": "activity", "id": "walk", "optional": true, "note": "Walk to meet Mum, or rest" } ],
+        "thu": [ { "type": "activity", "id": "walk", "optional": true, "note": "Walk to meet Mom, or rest" } ],
         "fri": [ { "type": "activity", "id": "cycle", "time": "morning" }, { "type": "session", "id": "dad-core", "time": "evening" } ],
         "sat": [ { "type": "activity", "id": "hike" } ],
         "sun": [ { "type": "activity", "id": "rest" } ]

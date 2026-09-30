@@ -1,11 +1,14 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { UserId } from '../../programme/programme'
 import { prefill } from '../../player/prefill'
+import { markDemoSeen, needsDemo } from '../../player/demo'
 import { startsBonusRound } from '../../player/steps'
 import { useWorkout } from '../../player/useWorkout'
 import { warmupFor } from '../../player/warmup'
 import { useWakeLock } from '../../lib/useWakeLock'
+import { useLogVersion } from '../../storage/useLog'
 import { ExerciseStep } from './ExerciseStep'
+import { FirstTimeDemo } from './FirstTimeDemo'
 import { FinishScreen } from './FinishScreen'
 import { OverviewSheet } from './OverviewSheet'
 import { PauseSheet } from './PauseSheet'
@@ -22,9 +25,16 @@ interface Props {
 
 export function WorkoutPlayer({ user, sessionId, onExit }: Props) {
   useWakeLock()
+  useLogVersion() // re-render when a demo is marked as seen
   const w = useWorkout(user, sessionId)
   const warmup = useMemo(() => warmupFor(w.session), [w.session])
   const [sheet, setSheet] = useState<'overview' | 'pause' | null>(null)
+  const showDemo = w.phase === 'work' && !!w.step && needsDemo(user, w.step.prescription.exercise)
+
+  // Each new screen in the workout starts at the top.
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [w.phase, w.stepIndex, showDemo])
 
   if (w.phase === 'finished' && w.summary) {
     return <FinishScreen user={user} session={w.session} summary={w.summary} onClose={onExit} />
@@ -58,6 +68,12 @@ export function WorkoutPlayer({ user, sessionId, onExit }: Props) {
 
       {w.phase === 'warmup' || !step ? (
         <WarmupStep plan={warmup} onDone={w.completeWarmup} />
+      ) : showDemo ? (
+        <FirstTimeDemo
+          key={step.prescription.exercise}
+          exerciseId={step.prescription.exercise}
+          onDone={() => markDemoSeen(user, step.prescription.exercise)}
+        />
       ) : (
         <ExerciseStep
           key={w.stepIndex}
