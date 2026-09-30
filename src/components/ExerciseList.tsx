@@ -1,4 +1,4 @@
-import { describePrescription, exerciseName } from '../programme/format'
+import { describePrescription, exerciseShortName } from '../programme/format'
 import type { Prescription } from '../programme/types'
 import styles from './ExerciseList.module.css'
 
@@ -18,7 +18,7 @@ export function ExerciseList({ exercises, variant, start = 1 }: Props) {
             {start + i}
           </span>
           <span className={styles.text}>
-            <span className={styles.name}>{exerciseName(p)}</span>
+            <span className={styles.name}>{exerciseShortName(p)}</span>
             {variant === 'rows' && <span className={styles.detail}>{describePrescription(p)}</span>}
           </span>
         </li>

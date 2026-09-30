@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "_notes": "Source of truth for the programme. Place at data/programme.json. Reps use {min,max}; perSide = per leg/arm; timed moves use durationSec. videoUrl/videoStartSec/videoEndSec are filled in later.",
+  "_notes": "Source of truth for the programme. Place at data/programme.json. Reps use {min,max}; perSide = per leg/arm; timed moves use durationSec. videoUrl/videoStartSec/videoEndSec are filled in later. shortName (optional) is used in tight lists; the full name is used elsewhere.",
 
   "restDefaults": {
     "sets": {
@@ -35,6 +35,7 @@
     },
     "dumbbell-rdl": {
       "name": "Dumbbell Romanian deadlift (RDL)",
+      "shortName": "Dumbbell RDL",
       "type": "strength",
       "category": "legs",
       "musclesPrimary": ["Hamstrings", "Glutes"],
@@ -59,6 +60,7 @@
     },
     "floor-chest-press": {
       "name": "Dumbbell floor chest press",
+      "shortName": "Floor chest press",
       "type": "strength",
       "category": "push",
       "musclesPrimary": ["Chest", "Triceps"],
@@ -83,6 +85,7 @@
     },
     "seated-shoulder-press": {
       "name": "Seated dumbbell shoulder press",
+      "shortName": "Seated shoulder press",
       "type": "strength",
       "category": "push",
       "musclesPrimary": ["Shoulders"],
@@ -295,7 +298,7 @@
       ]
     },
     "mum-upper-optional": {
-      "title": "Quick Upper (optional)",
+      "title": "Quick Upper",
       "format": "circuit",
       "estMinutes": 15,
       "optional": true,
@@ -354,7 +357,7 @@
       "betweenExercisesSec": 90
     },
     "dad-core": {
-      "title": "Core",
+      "title": "Core circuit",
       "format": "circuit",
       "estMinutes": 12,
       "warmup": { "base": false, "note": "Short version: march 60 s, glute bridges 10, arm circles 10" },
@@ -378,7 +381,7 @@
     "incline-walk": { "name": "Incline walk", "defaultMinutes": 30 },
     "yoga": { "name": "Yoga" },
     "walk": { "name": "Walk" },
-    "cycle": { "name": "Morning cycle" },
+    "cycle": { "name": "Cycle" },
     "hike": { "name": "Bukit Timah Hill hike" },
     "rest": { "name": "Rest day" }
   },

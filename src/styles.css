@@ -17,6 +17,7 @@
   --avatar-sage-bg: #d4e5da;
   --avatar-sage-text: #1d4a38;
 
+  /* Fonts: to change them, edit these two lines and the Google Fonts link in index.html. */
   --font-body: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
 

@@ -20,8 +20,10 @@ export function describePrescription(p: Prescription): string {
   return p.perSide ? `${main}, each side` : main
 }
 
-export function exerciseName(p: Prescription): string {
-  return getExercise(p.exercise).name
+/** The short name if there is one, for lists on the Today screen. */
+export function exerciseShortName(p: Prescription): string {
+  const exercise = getExercise(p.exercise)
+  return exercise.shortName ?? exercise.name
 }
 
 function plural(n: number, word: string): string {

@@ -7,6 +7,8 @@ export interface Range {
 
 export interface Exercise {
   name: string
+  /** Shorter name for tight lists, e.g. "Dumbbell RDL". Falls back to `name`. */
+  shortName?: string
   type: 'strength' | 'warmup' | 'mobility'
   category?: string
   status?: 'locked'
