@@ -1,0 +1,31 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 112px;
+  padding: 20px 22px 20px 18px;
+  text-align: left;
+}
+
+.text {
+  flex: 1;
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.note {
+  color: var(--text-muted);
+}
+
+.action {
+  color: var(--primary);
+  font-weight: 700;
+}

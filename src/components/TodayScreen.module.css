@@ -1,0 +1,31 @@
+.screen {
+  max-width: 480px;
+  margin: 0 auto;
+  /* Bottom padding leaves room for the floating nav bar. */
+  padding: calc(56px + env(safe-area-inset-top)) var(--gutter)
+    calc(130px + env(safe-area-inset-bottom));
+}
+
+.greeting {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+.dayHeading {
+  margin: 24px 0 14px;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+@media (max-width: 360px) {
+  .screen {
+    --gutter: 16px;
+  }
+  .greeting {
+    font-size: 34px;
+  }
+}

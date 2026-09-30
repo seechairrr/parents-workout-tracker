@@ -1,0 +1,100 @@
+:root {
+  --bg: #efeef5;
+  --surface: #ffffff;
+  --surface-muted: #efeef5;
+  --hero: #d9dbe6;
+  --text: #1b2030;
+  --text-muted: #474d60;
+  --border: #9ea1ad;
+  --primary: #1f5e54;
+  --primary-pressed: #174a42;
+  --primary-tint: #deece7;
+  --on-primary: #ffffff;
+  --focus: #1f5e54;
+
+  --avatar-peach-bg: #f5d9c6;
+  --avatar-peach-text: #7a3218;
+  --avatar-sage-bg: #d4e5da;
+  --avatar-sage-text: #1d4a38;
+
+  --font-body: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+
+  --radius-card: 28px;
+  --radius-row: 22px;
+  --shadow-card: 0 6px 24px rgba(27, 32, 48, 0.07);
+  --gutter: 24px;
+  --tap: 48px;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+p,
+ol,
+ul {
+  margin: 0;
+}
+
+ol,
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

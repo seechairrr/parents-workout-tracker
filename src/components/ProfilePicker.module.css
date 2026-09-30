@@ -1,0 +1,62 @@
+.screen {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: calc(64px + env(safe-area-inset-top)) var(--gutter) 40px;
+}
+
+.greeting {
+  color: var(--text-muted);
+}
+
+.title {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+.list {
+  display: grid;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  min-height: 130px;
+  padding: 24px;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  text-align: left;
+}
+
+.profile:active {
+  background: #f7f7fa;
+}
+
+.text {
+  flex: 1;
+  display: grid;
+  gap: 2px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.hint {
+  color: var(--text-muted);
+}
+
+.chevron {
+  color: var(--primary);
+}

@@ -1,0 +1,57 @@
+.strip {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 20px -6px 0;
+}
+
+.day {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  min-height: 84px;
+  padding: 12px 0 14px;
+  border-radius: 999px;
+}
+
+.day[data-selected='true'] {
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+.name {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.day[data-today='true'] .name {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  color: var(--on-primary);
+}
+
+.mark[data-status='done'] {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+/* Today, not yet done: green ring with a dot in the middle. */
+.mark[data-today='true']:not([data-status='done']) {
+  border: 2.5px solid var(--primary);
+}
+
+.mark[data-today='true']:not([data-status='done'])::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+}

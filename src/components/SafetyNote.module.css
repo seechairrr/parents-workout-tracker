@@ -1,0 +1,13 @@
+.note {
+  display: grid;
+  gap: 8px;
+  margin-top: 28px;
+  padding: 18px 20px;
+  border: 1.5px solid #d6d7df;
+  border-radius: 20px;
+  color: var(--text-muted);
+}
+
+.small {
+  font-size: 16px;
+}

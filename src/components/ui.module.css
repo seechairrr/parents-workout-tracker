@@ -1,0 +1,89 @@
+/* Building blocks shared by several components. */
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.cardBody {
+  padding: 22px 22px 24px;
+}
+
+.primaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 64px;
+  margin-top: 22px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.primaryButton:active {
+  background: var(--primary-pressed);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.optionalTag {
+  display: inline-block;
+  padding: 1px 10px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.iconCircle {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-tint);
+  color: var(--primary);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.meta {
+  margin-top: 4px;
+  color: var(--text-muted);
+}
+
+/* Empty ring that fills with a tick when done. */
+.doneCircle {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 2.5px solid var(--border);
+  border-radius: 50%;
+  color: var(--on-primary);
+}
+
+.doneCircle[data-done='true'] {
+  border-color: var(--primary);
+  background: var(--primary);
+}
