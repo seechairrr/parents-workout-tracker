@@ -81,7 +81,7 @@
       "cues": ["One hand and knee on a bench or chair", "Pull the dumbbell to your hip", "Don't shrug, keep your neck long"],
       "equipment": ["dumbbell", "bench or chair"],
       "restClass": "big",
-      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+      "videoUrl": "https://www.youtube.com/shorts/WpGL9RudAjo", "videoStartSec": null, "videoEndSec": null
     },
     "seated-shoulder-press": {
       "name": "Seated dumbbell shoulder press",
