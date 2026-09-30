@@ -1,0 +1,414 @@
+{
+  "version": 1,
+  "_notes": "Source of truth for the programme. Place at data/programme.json. Reps use {min,max}; perSide = per leg/arm; timed moves use durationSec. videoUrl/videoStartSec/videoEndSec are filled in later.",
+
+  "restDefaults": {
+    "sets": {
+      "bigLiftSec": 90,
+      "smallMoveSec": 60,
+      "coreSec": 45,
+      "betweenExercisesSec": 90
+    },
+    "circuit": {
+      "betweenExercisesSec": 30,
+      "betweenRoundsSec": 90
+    }
+  },
+
+  "progression": {
+    "rule": "When every set of an exercise reaches reps.max (or durationSec.max) with good form, suggest the next weight up (or +10 s for timed moves) next session.",
+    "availableWeightsKg": [2.5, 5]
+  },
+
+  "exercises": {
+    "goblet-squat": {
+      "name": "Goblet squat to a chair",
+      "type": "strength",
+      "category": "legs",
+      "musclesPrimary": ["Quads", "Glutes"],
+      "musclesSecondary": ["Inner thighs", "Core"],
+      "why": "Same movement as getting up from a chair. Tapping the chair gives a safe depth target.",
+      "cues": ["Hold the dumbbell at your chest", "Sit back until you lightly tap the chair", "Push through your whole foot to stand"],
+      "equipment": ["dumbbell", "chair"],
+      "restClass": "big",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "dumbbell-rdl": {
+      "name": "Dumbbell Romanian deadlift (RDL)",
+      "type": "strength",
+      "category": "legs",
+      "musclesPrimary": ["Hamstrings", "Glutes"],
+      "musclesSecondary": ["Lower back", "Grip"],
+      "why": "Teaches safe bending to lift things off the floor.",
+      "cues": ["Soft knees, push your hips back", "Keep the dumbbells close to your legs", "Flat back, stop when you feel a hamstring stretch"],
+      "equipment": ["dumbbells"],
+      "restClass": "big",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "reverse-lunge": {
+      "name": "Reverse lunge",
+      "type": "strength",
+      "category": "legs",
+      "musclesPrimary": ["Quads", "Glutes"],
+      "musclesSecondary": ["Hip stabilisers", "Balance"],
+      "why": "Single-leg strength and balance for hiking. Easier on the knees than forward lunges.",
+      "cues": ["Hold a wall or chair at first", "Step back and lower gently", "Push through the front heel to return"],
+      "equipment": ["bodyweight", "optional dumbbells"],
+      "restClass": "big",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "floor-chest-press": {
+      "name": "Dumbbell floor chest press",
+      "type": "strength",
+      "category": "push",
+      "musclesPrimary": ["Chest", "Triceps"],
+      "musclesSecondary": ["Front shoulders"],
+      "why": "The floor limits range of motion, so it's gentle on the shoulders.",
+      "cues": ["Lie on your back, knees bent", "Elbows at about 45° from your body", "Press up, lower until elbows touch the floor"],
+      "equipment": ["dumbbells", "mat"],
+      "restClass": "big",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "supported-row": {
+      "name": "One-arm supported row",
+      "type": "strength",
+      "category": "pull",
+      "musclesPrimary": ["Lats", "Upper back"],
+      "musclesSecondary": ["Rear shoulders", "Biceps"],
+      "why": "Builds the back for posture. A hand on a bench or chair protects the lower back.",
+      "cues": ["One hand and knee on a bench or chair", "Pull the dumbbell to your hip", "Don't shrug, keep your neck long"],
+      "equipment": ["dumbbell", "bench or chair"],
+      "restClass": "big",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "seated-shoulder-press": {
+      "name": "Seated dumbbell shoulder press",
+      "type": "strength",
+      "category": "push",
+      "musclesPrimary": ["Shoulders"],
+      "musclesSecondary": ["Triceps"],
+      "why": "Keeps them able to lift things overhead.",
+      "cues": ["Sit tall with back support", "Press up without arching your back", "Keep shoulders away from your ears"],
+      "equipment": ["dumbbells", "chair or bench"],
+      "restClass": "big",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "dead-bug": {
+      "name": "Dead bug",
+      "type": "strength",
+      "category": "core",
+      "musclesPrimary": ["Deep core", "Abs"],
+      "musclesSecondary": ["Coordination"],
+      "why": "Trains the core to protect the lower back.",
+      "cues": ["Lower back pressed into the floor", "Slowly extend opposite arm and leg", "Breathe out as you extend"],
+      "equipment": ["mat"],
+      "restClass": "core",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "plank": {
+      "name": "Plank",
+      "type": "strength",
+      "category": "core",
+      "musclesPrimary": ["Abs", "Obliques"],
+      "musclesSecondary": ["Shoulder stabilisers"],
+      "why": "Whole-body bracing.",
+      "cues": ["Elbows under shoulders", "Straight line from head to heels", "Knees down is fine to start"],
+      "equipment": ["mat"],
+      "restClass": "core",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "farmers-carry": {
+      "name": "Farmer's carry",
+      "type": "strength",
+      "category": "carry",
+      "musclesPrimary": ["Grip", "Forearms", "Core"],
+      "musclesSecondary": ["Upper back", "Hips"],
+      "why": "Carrying groceries or a daypack. Grip strength is a strong marker of healthy ageing.",
+      "cues": ["Dumbbell in each hand", "Shoulders down and back, tall neck", "Walk slowly and steadily"],
+      "equipment": ["dumbbells"],
+      "restClass": "small",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "band-pull-apart": {
+      "name": "Band pull-apart",
+      "type": "strength",
+      "category": "pull",
+      "musclesPrimary": ["Rear shoulders", "Rhomboids", "Mid-back"],
+      "musclesSecondary": [],
+      "why": "Pulls the shoulders back, which helps posture and neck tension.",
+      "cues": ["Arms straight in front at chest height", "Pull the band apart by squeezing shoulder blades", "Don't shrug"],
+      "equipment": ["resistance band"],
+      "restClass": "small",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "glute-bridge": {
+      "name": "Glute bridge",
+      "type": "strength",
+      "category": "legs",
+      "musclesPrimary": ["Glutes"],
+      "musclesSecondary": ["Hamstrings"],
+      "why": "Strong glutes support the lower back and knees.",
+      "cues": ["Lie on your back, feet flat", "Squeeze glutes to lift hips", "Pause at the top, lower slowly"],
+      "equipment": ["mat"],
+      "restClass": "small",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+
+    "suitcase-squat": {
+      "name": "Suitcase squat",
+      "type": "strength",
+      "category": "legs",
+      "status": "locked",
+      "musclesPrimary": ["Quads", "Glutes"],
+      "musclesSecondary": ["Grip", "Core"],
+      "why": "A squat variation with dumbbells at your sides.",
+      "cues": ["Dumbbells at your sides", "Sit back and down", "Chest tall"],
+      "equipment": ["dumbbells"],
+      "restClass": "big",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "step-up": {
+      "name": "Step-up",
+      "type": "strength",
+      "category": "legs",
+      "status": "locked",
+      "musclesPrimary": ["Quads", "Glutes"],
+      "musclesSecondary": ["Balance"],
+      "why": "Mimics climbing stairs and hills.",
+      "cues": ["Use a sturdy step 15–25 cm high", "Whole foot on the step", "Push through the top leg, step down slowly"],
+      "equipment": ["step or low bench"],
+      "restClass": "big",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+    "pallof-press": {
+      "name": "Pallof press",
+      "type": "strength",
+      "category": "core",
+      "status": "locked",
+      "musclesPrimary": ["Obliques", "Deep core"],
+      "musclesSecondary": [],
+      "why": "Trains the core to resist twisting.",
+      "cues": ["Band anchored to the side at chest height", "Press straight out and hold", "Don't let the band pull you round"],
+      "equipment": ["resistance band or cable"],
+      "restClass": "core",
+      "videoUrl": null, "videoStartSec": null, "videoEndSec": null
+    },
+
+    "march-on-spot": { "name": "March on the spot", "type": "warmup", "cues": ["Swing your arms", "Build to a brisk pace"], "videoUrl": null },
+    "arm-circles": { "name": "Arm circles", "type": "warmup", "cues": ["Small to big circles", "Both directions"], "videoUrl": null },
+    "hip-circles": { "name": "Hip circles", "type": "warmup", "cues": ["Hands on hips", "Slow circles both ways"], "videoUrl": null },
+    "chair-squat-bw": { "name": "Bodyweight squat to chair", "type": "warmup", "cues": ["Tap the chair, stand back up"], "videoUrl": null },
+    "calf-raise": { "name": "Standing calf raise", "type": "warmup", "musclesPrimary": ["Calves"], "why": "Ankle and calf strength for hiking.", "cues": ["Hold a wall", "Rise onto your toes, lower slowly"], "videoUrl": null },
+    "fire-hydrant": { "name": "Fire hydrant", "type": "warmup", "musclesPrimary": ["Side glutes"], "why": "Keeps hips and knees stable.", "cues": ["On hands and knees", "Lift bent knee out to the side", "Keep hips level"], "videoUrl": null },
+    "wall-slide": { "name": "Wall slide", "type": "warmup", "cues": ["Back and arms against the wall", "Slide arms up and down slowly"], "videoUrl": null },
+    "leg-swing": { "name": "Leg swings", "type": "warmup", "cues": ["Hold a wall", "Swing forward and back, relaxed"], "videoUrl": null },
+
+    "chin-tuck": { "name": "Chin tuck", "type": "mobility", "cues": ["Sit or stand tall", "Glide chin straight back (double chin)", "Hold 3 seconds"], "videoUrl": null },
+    "upper-trap-stretch": { "name": "Upper trap stretch", "type": "mobility", "cues": ["Ear toward shoulder", "Keep the opposite shoulder down", "Gentle, never sharp"], "videoUrl": null },
+    "levator-stretch": { "name": "Levator scapulae stretch", "type": "mobility", "cues": ["Turn nose toward armpit", "Gently look down", "Gentle, never sharp"], "videoUrl": null },
+    "head-turns": { "name": "Slow head turns", "type": "mobility", "cues": ["Turn slowly to look over each shoulder", "Stay within a comfortable range"], "videoUrl": null },
+    "shoulder-rolls": { "name": "Backward shoulder rolls", "type": "mobility", "cues": ["Slow, big circles backwards"], "videoUrl": null },
+    "doorway-chest-stretch": { "name": "Doorway chest stretch", "type": "mobility", "cues": ["Forearms on the door frame", "Step through gently until you feel the chest stretch"], "videoUrl": null }
+  },
+
+  "rotations": [
+    { "from": "goblet-squat", "to": "suitcase-squat", "afterWeeks": 4 },
+    { "from": "reverse-lunge", "to": "step-up", "afterWeeks": 8, "note": "Needs a sturdy 15–25 cm step" },
+    { "from": "plank", "to": "pallof-press", "afterWeeks": 12, "note": "Needs a resistance band or cable" }
+  ],
+
+  "warmups": {
+    "base": {
+      "title": "5-minute warm-up",
+      "items": [
+        { "exercise": "march-on-spot", "durationSec": { "min": 60, "max": 60 } },
+        { "exercise": "arm-circles", "reps": { "min": 10, "max": 10 }, "perSide": true, "note": "10 each direction" },
+        { "exercise": "hip-circles", "reps": { "min": 10, "max": 10 }, "note": "10 each direction" },
+        { "exercise": "chair-squat-bw", "reps": { "min": 10, "max": 10 } },
+        { "exercise": "glute-bridge", "reps": { "min": 10, "max": 10 } },
+        { "exercise": "calf-raise", "reps": { "min": 10, "max": 10 } },
+        { "exercise": "fire-hydrant", "reps": { "min": 8, "max": 8 }, "perSide": true }
+      ],
+      "finalNote": "Do the first set or round slightly lighter and slower."
+    },
+    "upperAddOn": [ { "exercise": "wall-slide", "reps": { "min": 10, "max": 10 } } ],
+    "lowerAddOn": [ { "exercise": "leg-swing", "reps": { "min": 10, "max": 10 }, "perSide": true } ]
+  },
+
+  "routines": {
+    "neck": {
+      "title": "Neck routine",
+      "estMinutes": 5,
+      "items": [
+        { "exercise": "chin-tuck", "reps": { "min": 10, "max": 10 }, "holdSec": 3 },
+        { "exercise": "upper-trap-stretch", "durationSec": { "min": 30, "max": 30 }, "perSide": true },
+        { "exercise": "levator-stretch", "durationSec": { "min": 30, "max": 30 }, "perSide": true },
+        { "exercise": "head-turns", "reps": { "min": 5, "max": 5 }, "perSide": true },
+        { "exercise": "shoulder-rolls", "reps": { "min": 10, "max": 10 } },
+        { "exercise": "doorway-chest-stretch", "durationSec": { "min": 30, "max": 30 } }
+      ],
+      "safetyNote": "Stretches should feel gentle, never sharp. See a doctor or physio if there is pain or tingling down an arm, numbness, headaches or dizziness."
+    }
+  },
+
+  "sessions": {
+    "mum-full-a": {
+      "title": "Full Body A",
+      "format": "sets",
+      "estMinutes": 35,
+      "warmup": { "base": true, "addOn": "lowerAddOn" },
+      "exercises": [
+        { "exercise": "goblet-squat", "sets": 3, "reps": { "min": 8, "max": 10 }, "restSec": 90 },
+        { "exercise": "dumbbell-rdl", "sets": 3, "reps": { "min": 8, "max": 10 }, "restSec": 90 },
+        { "exercise": "floor-chest-press", "sets": 3, "reps": { "min": 8, "max": 10 }, "restSec": 90 },
+        { "exercise": "supported-row", "sets": 3, "reps": { "min": 8, "max": 10 }, "perSide": true, "restSec": 90 },
+        { "exercise": "dead-bug", "sets": 2, "reps": { "min": 8, "max": 8 }, "perSide": true, "restSec": 45 }
+      ],
+      "betweenExercisesSec": 90
+    },
+    "mum-full-b": {
+      "title": "Full Body B",
+      "format": "circuit",
+      "estMinutes": 30,
+      "warmup": { "base": true, "addOn": "upperAddOn" },
+      "circuits": [
+        {
+          "rounds": { "min": 2, "max": 3 },
+          "betweenExercisesSec": 30,
+          "betweenRoundsSec": 90,
+          "exercises": [
+            { "exercise": "reverse-lunge", "reps": { "min": 8, "max": 8 }, "perSide": true },
+            { "exercise": "seated-shoulder-press", "reps": { "min": 8, "max": 10 } },
+            { "exercise": "plank", "durationSec": { "min": 20, "max": 30 } }
+          ]
+        },
+        {
+          "rounds": { "min": 2, "max": 3 },
+          "betweenExercisesSec": 30,
+          "betweenRoundsSec": 90,
+          "exercises": [
+            { "exercise": "goblet-squat", "reps": { "min": 10, "max": 10 } },
+            { "exercise": "supported-row", "reps": { "min": 10, "max": 10 }, "perSide": true },
+            { "exercise": "farmers-carry", "durationSec": { "min": 30, "max": 40 } }
+          ]
+        }
+      ]
+    },
+    "mum-upper-optional": {
+      "title": "Quick Upper (optional)",
+      "format": "circuit",
+      "estMinutes": 15,
+      "optional": true,
+      "warmup": { "base": true, "addOn": "upperAddOn" },
+      "circuits": [
+        {
+          "rounds": { "min": 2, "max": 2 },
+          "betweenExercisesSec": 20,
+          "betweenRoundsSec": 60,
+          "exercises": [
+            { "exercise": "floor-chest-press", "reps": { "min": 10, "max": 10 } },
+            { "exercise": "supported-row", "reps": { "min": 10, "max": 10 }, "perSide": true },
+            { "exercise": "seated-shoulder-press", "reps": { "min": 8, "max": 8 } }
+          ]
+        }
+      ]
+    },
+    "dad-upper": {
+      "title": "Upper Body",
+      "format": "circuit",
+      "estMinutes": 25,
+      "warmup": { "base": true, "addOn": "upperAddOn" },
+      "circuits": [
+        {
+          "rounds": { "min": 3, "max": 3 },
+          "betweenExercisesSec": 30,
+          "betweenRoundsSec": 90,
+          "exercises": [
+            { "exercise": "floor-chest-press", "reps": { "min": 10, "max": 10 } },
+            { "exercise": "supported-row", "reps": { "min": 10, "max": 10 }, "perSide": true }
+          ]
+        },
+        {
+          "rounds": { "min": 3, "max": 3 },
+          "betweenExercisesSec": 30,
+          "betweenRoundsSec": 90,
+          "exercises": [
+            { "exercise": "seated-shoulder-press", "reps": { "min": 8, "max": 10 }, "note": "Keep it light. Stop if your neck flares up." },
+            { "exercise": "band-pull-apart", "reps": { "min": 12, "max": 12 } }
+          ]
+        }
+      ],
+      "after": ["neck"]
+    },
+    "dad-lower": {
+      "title": "Lower Body",
+      "format": "sets",
+      "estMinutes": 35,
+      "warmup": { "base": true, "addOn": "lowerAddOn" },
+      "exercises": [
+        { "exercise": "goblet-squat", "sets": 3, "reps": { "min": 8, "max": 10 }, "restSec": 90 },
+        { "exercise": "dumbbell-rdl", "sets": 3, "reps": { "min": 8, "max": 10 }, "restSec": 90 },
+        { "exercise": "reverse-lunge", "sets": 3, "reps": { "min": 8, "max": 8 }, "perSide": true, "restSec": 90 },
+        { "exercise": "farmers-carry", "sets": 2, "durationSec": { "min": 30, "max": 40 }, "restSec": 60, "note": "Shoulders down and back, tall neck. Start light." }
+      ],
+      "betweenExercisesSec": 90
+    },
+    "dad-core": {
+      "title": "Core",
+      "format": "circuit",
+      "estMinutes": 12,
+      "warmup": { "base": false, "note": "Short version: march 60 s, glute bridges 10, arm circles 10" },
+      "circuits": [
+        {
+          "rounds": { "min": 3, "max": 3 },
+          "betweenExercisesSec": 20,
+          "betweenRoundsSec": 60,
+          "exercises": [
+            { "exercise": "dead-bug", "reps": { "min": 8, "max": 8 }, "perSide": true },
+            { "exercise": "plank", "durationSec": { "min": 20, "max": 40 } },
+            { "exercise": "glute-bridge", "reps": { "min": 10, "max": 12 } }
+          ]
+        }
+      ],
+      "after": ["neck"]
+    }
+  },
+
+  "activities": {
+    "incline-walk": { "name": "Incline walk", "defaultMinutes": 30 },
+    "yoga": { "name": "Yoga" },
+    "walk": { "name": "Walk" },
+    "cycle": { "name": "Morning cycle" },
+    "hike": { "name": "Bukit Timah Hill hike" },
+    "rest": { "name": "Rest day" }
+  },
+
+  "users": {
+    "mum": {
+      "displayName": "Mum",
+      "dailyRoutines": [],
+      "schedule": {
+        "mon": [ { "type": "session", "id": "mum-full-a" } ],
+        "tue": [ { "type": "activity", "id": "incline-walk" } ],
+        "wed": [ { "type": "activity", "id": "rest" }, { "type": "session", "id": "mum-upper-optional", "optional": true } ],
+        "thu": [ { "type": "activity", "id": "yoga", "optional": true } ],
+        "fri": [ { "type": "session", "id": "mum-full-b" } ],
+        "sat": [ { "type": "activity", "id": "hike" } ],
+        "sun": [ { "type": "activity", "id": "rest" } ]
+      }
+    },
+    "dad": {
+      "displayName": "Dad",
+      "dailyRoutines": ["neck"],
+      "schedule": {
+        "mon": [ { "type": "session", "id": "dad-upper" } ],
+        "tue": [ { "type": "activity", "id": "rest" } ],
+        "wed": [ { "type": "session", "id": "dad-lower" } ],
+        "thu": [ { "type": "activity", "id": "walk", "optional": true, "note": "Walk to meet Mum, or rest" } ],
+        "fri": [ { "type": "activity", "id": "cycle", "time": "morning" }, { "type": "session", "id": "dad-core", "time": "evening" } ],
+        "sat": [ { "type": "activity", "id": "hike" } ],
+        "sun": [ { "type": "activity", "id": "rest" } ]
+      }
+    }
+  }
+}
