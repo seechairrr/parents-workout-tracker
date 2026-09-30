@@ -93,8 +93,30 @@ export interface User {
   schedule: Record<DayKey, ScheduleItem[]>
 }
 
+export interface WarmupItem {
+  exercise: string
+  reps?: Range
+  durationSec?: Range
+  perSide?: boolean
+  note?: string
+}
+
+export interface Warmups {
+  base: { title: string; items: WarmupItem[]; finalNote?: string }
+  upperAddOn: WarmupItem[]
+  lowerAddOn: WarmupItem[]
+}
+
+export interface RestDefaults {
+  sets: { bigLiftSec: number; smallMoveSec: number; coreSec: number; betweenExercisesSec: number }
+  circuit: { betweenExercisesSec: number; betweenRoundsSec: number }
+}
+
 export interface Programme {
   version: number
+  restDefaults: RestDefaults
+  progression: { rule: string; availableWeightsKg: number[] }
+  warmups: Warmups
   exercises: Record<string, Exercise>
   routines: Record<string, Routine>
   sessions: Record<string, Session>

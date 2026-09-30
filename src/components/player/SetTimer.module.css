@@ -1,0 +1,20 @@
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 60px;
+  border: 2px solid var(--primary);
+  border-radius: 999px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.timer[data-running='true'] {
+  background: var(--primary-tint);
+}
+
+.clock {
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,45 @@
+.name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.why {
+  margin-top: 8px;
+  color: var(--text-muted);
+}
+
+.cues {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.cue {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 72px;
+  padding: 14px 18px;
+  border-radius: var(--radius-row);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  font-weight: 700;
+}
+
+.number {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-tint);
+  color: var(--primary);
+}
+
+.muscles {
+  margin-top: 20px;
+  color: var(--text-muted);
+}

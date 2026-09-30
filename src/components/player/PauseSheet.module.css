@@ -1,0 +1,35 @@
+.text {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.primary,
+.secondary {
+  min-height: 68px;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.primary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.secondary {
+  border: 2px solid var(--primary);
+  background: var(--surface);
+  color: var(--primary);
+}
+
+.safety {
+  margin-top: 28px;
+  text-align: center;
+  color: var(--text-muted);
+}

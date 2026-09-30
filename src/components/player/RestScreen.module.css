@@ -1,0 +1,161 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: calc(28px + env(safe-area-inset-top)) var(--gutter) calc(16px + env(safe-area-inset-bottom));
+  background: var(--primary-tint);
+  text-align: center;
+}
+
+.screen > * {
+  width: 100%;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.sub {
+  margin-top: 4px;
+  color: var(--text-muted);
+}
+
+.ring {
+  position: relative;
+  width: min(240px, 66vw);
+  aspect-ratio: 1;
+  margin-top: 20px;
+}
+
+.ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.track {
+  fill: var(--surface);
+  stroke: #c9ddd6;
+  stroke-width: 18;
+}
+
+.progress {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 18;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.25s linear;
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 4px;
+}
+
+.clock {
+  font-size: 68px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: 17px;
+}
+
+.upNext {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 22px;
+  background: var(--surface);
+  text-align: left;
+}
+
+.upNextIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-tint);
+  color: var(--primary);
+}
+
+.upNextLabel {
+  display: block;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.upNextName {
+  font-weight: 700;
+}
+
+.bonus {
+  margin-top: 12px;
+  color: var(--text-muted);
+}
+
+.finishCircuit {
+  min-height: 52px;
+  margin-top: 8px;
+  padding: 0 20px;
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.ring[data-small='true'] {
+  width: min(190px, 52vw);
+}
+
+/* Sits at the bottom of the screen, but never covers anything above it. */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.more,
+.skip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 72px;
+  border-radius: 999px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.more {
+  border: 2px solid var(--primary);
+  background: var(--surface);
+  color: var(--primary);
+}
+
+.skip {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.ring[data-small='true'] .clock {
+  font-size: 52px;
+}

@@ -1,0 +1,52 @@
+.screen {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 14px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: calc(40px + env(safe-area-inset-top)) var(--gutter) calc(40px + env(safe-area-inset-bottom));
+  text-align: center;
+}
+
+.badge {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.sub {
+  color: var(--text-muted);
+  font-size: 20px;
+}
+
+.after {
+  padding: 14px 18px;
+  border-radius: 20px;
+  background: var(--surface);
+  font-weight: 700;
+}
+
+.button {
+  width: 100%;
+  min-height: 72px;
+  margin-top: 16px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: 22px;
+  font-weight: 700;
+}

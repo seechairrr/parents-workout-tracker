@@ -25,9 +25,10 @@ data/programme.json      the programme (exercises, sessions, schedules)
 design/                  the design mockups
 public/                  app icons, manifest (add to home screen) and sw.js (offline)
 src/programme/           reads programme.json and turns it into on-screen text
+src/player/              workout player logic: steps, rest times, pre-filled numbers
 src/storage/             everything saved on the phone (swap for a backend later)
 src/lib/                 dates, week ticks, profile colours
-src/components/          the screens and cards
+src/components/          the screens and cards (player screens in components/player/)
 ```
 
 ## Deploy to Vercel

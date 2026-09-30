@@ -3,17 +3,19 @@ import type { ScheduleItem, SetsSession } from '../programme/types'
 import { Eyebrow } from './Eyebrow'
 import { ExerciseList } from './ExerciseList'
 import { Icon } from './Icon'
+import { SessionAction, type SessionStatus } from './SessionAction'
 import ui from './ui.module.css'
 import styles from './SessionCard.module.css'
 
 interface Props {
   item: ScheduleItem
   session: SetsSession
+  status: SessionStatus
   onStart: () => void
 }
 
 /** Straight-sets session: big card with a start button, then the exercise list below it. */
-export function SetsSessionCard({ item, session, onStart }: Props) {
+export function SetsSessionCard({ item, session, status, onStart }: Props) {
   return (
     <>
       <section className={ui.card} aria-label={session.title}>
@@ -29,9 +31,7 @@ export function SetsSessionCard({ item, session, onStart }: Props) {
           <Eyebrow item={item} />
           <h3 className={ui.cardTitle}>{session.title}</h3>
           <p className={ui.meta}>{describeSession(session)}</p>
-          <button type="button" className={ui.primaryButton} onClick={onStart}>
-            <Icon name="play" size={22} /> Start workout
-          </button>
+          <SessionAction status={status} startLabel="Start workout" onStart={onStart} />
         </div>
       </section>
 

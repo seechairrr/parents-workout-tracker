@@ -1,7 +1,15 @@
 import type { UserId } from '../programme/programme'
 import { buildDayPlan } from '../programme/dayPlan'
 import type { DayKey } from '../programme/types'
-import { isActivityDone, isRoutineDone, setActivityDone, setRoutineDone } from '../storage/storage'
+import {
+  getActiveWorkout,
+  isActivityDone,
+  isRoutineDone,
+  sessionResult,
+  setActivityDone,
+  setRoutineDone,
+} from '../storage/storage'
+import type { SessionStatus } from './SessionAction'
 import { ActivityCard } from './ActivityCard'
 import { CircuitSessionCard } from './CircuitSessionCard'
 import { RestCard } from './RestCard'
@@ -27,11 +35,19 @@ export function DayPlan({ user, day, iso, canLog, week, onStartSession }: Props)
       {cards.map((card, i) => {
         switch (card.kind) {
           case 'session': {
-            const start = () => onStartSession(card.item.id)
+            const id = card.item.id
+            const active = getActiveWorkout(user)
+            const status: SessionStatus =
+              active?.sessionId === id && active.date === iso
+                ? 'active'
+                : sessionResult(user, iso, id) === 'finished'
+                  ? 'finished'
+                  : 'new'
+            const props = { item: card.item, status, onStart: () => onStartSession(id) }
             return card.session.format === 'sets' ? (
-              <SetsSessionCard key={i} item={card.item} session={card.session} onStart={start} />
+              <SetsSessionCard key={i} {...props} session={card.session} />
             ) : (
-              <CircuitSessionCard key={i} item={card.item} session={card.session} onStart={start} />
+              <CircuitSessionCard key={i} {...props} session={card.session} />
             )
           }
           case 'rest':

@@ -3,6 +3,24 @@
 
 const paths = {
   chevronRight: <path d="M9 5l7 7-7 7" />,
+  close: <path d="M6 6l12 12M18 6L6 18" />,
+  minus: <path d="M5 12h14" />,
+  plus: <path d="M12 5v14M5 12h14" />,
+  pause: <path d="M9 5v14M15 5v14" />,
+  arrowRight: <path d="M4.5 12h15M13.5 6l6 6-6 6" />,
+  skip: <path d="M6 6l7 6-7 6M17 6v12" />,
+  playCircle: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M10 8.5v7l5.5-3.5z" fill="currentColor" />
+    </>
+  ),
+  timer: (
+    <>
+      <circle cx="12" cy="13" r="8" />
+      <path d="M12 9v4l2.5 2.5M9.5 2.5h5" />
+    </>
+  ),
   play: <path d="M7 4.5v15l12-7.5z" fill="currentColor" stroke="none" />,
   check: <path d="M5 12.5l4.5 4.5L19 7.5" />,
   sun: (

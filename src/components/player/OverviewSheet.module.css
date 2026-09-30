@@ -1,0 +1,74 @@
+.session {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.meta {
+  color: var(--text-muted);
+}
+
+.heading {
+  margin: 24px 0 10px;
+  color: var(--text-muted);
+  font-size: 17px;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 84px;
+  padding: 14px 16px;
+  border: 2px solid transparent;
+  border-radius: var(--radius-row);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+.row[data-status='now'] {
+  border-color: var(--primary);
+  background: var(--primary-tint);
+}
+
+.mark {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  color: var(--on-primary);
+}
+
+.row[data-status='done'] .mark {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.row[data-status='now'] .mark {
+  border-color: var(--primary);
+  border-width: 3px;
+}
+
+.state {
+  display: block;
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.title {
+  display: block;
+  font-weight: 700;
+}
+
+.detail {
+  color: var(--text-muted);
+}

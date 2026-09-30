@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { getSession, type UserId } from './programme/programme'
+import type { UserId } from './programme/programme'
 import { BottomNav, type Tab } from './components/BottomNav'
 import { ComingSoon } from './components/ComingSoon'
 import { ProfilePicker } from './components/ProfilePicker'
 import { TodayScreen } from './components/TodayScreen'
+import { WorkoutPlayer } from './components/player/WorkoutPlayer'
 
 // Simple screen switching. No router needed yet: the app always opens on the
 // profile picker, and there are only a few screens.
@@ -26,13 +27,7 @@ export function App() {
   const toToday = () => setScreen({ name: 'tab', user: screen.user, tab: 'today' })
 
   if (screen.name === 'player') {
-    return (
-      <ComingSoon
-        title={getSession(screen.sessionId).title}
-        message="The workout player is coming in the next update."
-        onBack={toToday}
-      />
-    )
+    return <WorkoutPlayer user={screen.user} sessionId={screen.sessionId} onExit={toToday} />
   }
 
   return (

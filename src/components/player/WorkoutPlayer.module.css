@@ -1,0 +1,12 @@
+.screen {
+  max-width: 480px;
+  margin: 0 auto;
+  /* Bottom padding leaves room for the pinned main button. */
+  padding: calc(20px + env(safe-area-inset-top)) var(--gutter) calc(130px + env(safe-area-inset-bottom));
+}
+
+@media (max-width: 360px) {
+  .screen {
+    --gutter: 16px;
+  }
+}

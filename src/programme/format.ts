@@ -56,3 +56,13 @@ export function sessionTitle(id: string): string {
 export function activityName(id: string): string {
   return getActivity(id).name
 }
+
+/** "Aim for 8–10 reps each side" */
+export function describeAim(p: Prescription): string {
+  return `Aim for ${describeWork(p)}${p.perSide ? ' each side' : ''}`
+}
+
+/** "5 kg", or "No weight" for 0 */
+export function formatWeight(kg: number): string {
+  return kg === 0 ? 'No weight' : `${kg} kg`
+}

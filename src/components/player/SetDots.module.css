@@ -1,0 +1,33 @@
+.dots {
+  display: inline-flex;
+  gap: 5px;
+  vertical-align: middle;
+}
+
+.dot {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  color: var(--on-primary);
+}
+
+.dot[data-state='done'] {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.dot[data-state='current'] {
+  border-color: var(--primary);
+  border-width: 2.5px;
+}
+
+.dot[data-state='current']::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+}
